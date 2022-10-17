@@ -1,43 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./images/icons/icon-logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="custom-list" content="Web site custom-list" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:ital,wght@1,100&display=swap"
+        rel="stylesheet">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <title>Dashboard</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+    <div class="container">
+        <div class="side-menu">
+            <div class="logo">
+               <img src="./images/icons/icon-logoBlack.svg" alt="icon-logoBlack">
+                <span class="logo__text">Dashboard</span>
+                <span class="logo__vr">v.01</span>
+            </div>
+            <form class="side-menu__form" action="#">
+                <label class="form__label">
+                    <input class="form__input input-hidden" type="radio">
+                    <div class="form__checkbox">
+                        <img src="./images/icons/icon-dashboart.svg" alt="icon-dashboart">
+                        <span>Dashboard</span>
+                        <span class="arrow">></span>
+                    </div>
+                </label>
+                <label class="form__label">
+                    <input class="form__input input-hidden" type="radio">
+                    <div class="form__checkbox">
+                        <img src="./images/icons/icon-product.svg" alt="icon-product">
+                        <span>Product</span>
+                        <span class="arrow">></span>
+                    </div>
+                </label>
+                <label class="form__label">
+                    <input class="form__input input-hidden" type="radio" checked>
+                    <div class="form__checkbox">
+                        <img src="./images/icons/icon-customers.svg" alt="icon-customers">
+                        <span>Customers</span>
+                        <span class="arrow">></span>
+                    </div>
+                </label>
+                <label class="form__label">
+                    <input class="form__input input-hidden" type="radio">
+                    <div class="form__checkbox">
+                        <img src="./images/icons/icon-income.svg" alt="icon-income">
+                        <span>Income</span>
+                        <span class="arrow">></span>
+                    </div>
+                </label>
+                <label class="form__label">
+                    <input class="form__input input-hidden" type="radio">
+                    <div class="form__checkbox">
+                        <img src="./images/icons/icon-promote.svg" alt="icon-promote">
+                        <span>Promote</span>
+                        <span class="arrow">></span>
+                    </div>
+                </label>
+                <label class="form__label">
+                    <input class="form__input input-hidden" type="radio">
+                    <div class="form__checkbox">
+                        <img src="./images/icons/icon-help.svg" alt="icon-help">
+                        <span>Help</span>
+                        <span class="arrow">></span>
+                    </div>
+                </label>
+            </form>
+            <script type="text/javascript">
+                const handler = function (e) {
+                    e = e || window.e;
+                    let target = e.target || e.srcElement;
+                    if (target.nodeType === 1 && target.nodeName.toLowerCase() === "input" && target.type === "radio" && target.checked) {
+                        let inputs = document.getElementsByTagName("input");
+                        for (let i = 0; inputs[i]; i++) {
+                            if (inputs[i].type === "radio" && inputs[i] !== target) {
+                                inputs[i].checked = false;
+                            }
+                        }
+                    }
+                }
+                if (document.addEventListener) {
+                    document.addEventListener('click', handler, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent('onclick', handler);
+                }
+            </script>
+            <div class="side-menu__avatar">
+                <img src="./images/ava/manager.png" alt="manager">
+                <div class="avatar__data">
+                    <p class="avatar__name">Evano</p>
+                    <span class="avatar__position">Project Manager</span>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <div class="product__top">
+                <h2 class="product__top-title">Hello Evano 👋🏼,</h2>
+            </div>
+            <div class="product__tabl">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+                <div class="tabl__top">
+                    <div class="tabl__top-text">
+                        <h3 class="tabl__top-title">All Customers</h3>
+                        <p class="tabl__top-subtitle">Active Members</p>
+
+                    </div>
+                    <div class="tabl__search">
+                        <form class="tabl__search-form" action="#">
+                            <button class="tabl__search-btn" type="submit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                                        stroke="#7E7E7E" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M21 21L16.65 16.65" stroke="#7E7E7E" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+
+                            </button>
+                            <input class="tabl__search-input" placeholder="Search" type="text">
+                        </form>
+                    </div>
+                </div>
+                <div class="tabl__content">
+                    <table class="tabl__form">
+                        <tr class="tabl__row tabl__row--title">
+                            <th>Customer Name</th>
+                            <th>Company</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Country</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox">
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox" checked>
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox" checked>
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox">
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox">
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox">
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox">
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox">
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="tabl__row">
+                            <td>Jane Cooper</td>
+                            <td>Microsoft</td>
+                            <td>(225) 555-0118</td>
+                            <td>jane@microsoft.com</td>
+                            <td>United States</td>
+                            <td><label class="tabl__label">
+                                    <input class="tabl__input input-hidden" type="checkbox" checked>
+                                    <div class="tabl__checkbox">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="tabl__bottom">
+                        <p class="tabl__bottom-text">Showing data 1 to 8 of 256K entries</p>
+                        <div class="pagination">
+                            <ul class="pagination__list">
+                                <li class="pagination__item">
+                                    <a class="pagination__prev" href="#">< </a>
+                                </li>
+                                <li class="pagination__item pagination__item--active">
+                                    <a class="pagination__page pagination__page--active" href="#">1</a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a class="pagination__page" href="#">2</a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a class="pagination__page" href="#">3</a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a class="pagination__page" href="#">4</a>
+                                </li>
+                                <li class="pagination__item--span">
+                                    <span class="pagination__span">...</span>
+                                </li>
+                                <li class="pagination__item">
+                                    <a class="pagination__page" href="#">40</a>
+                                </li>
+                                <li class="pagination__item">
+                                    <a class="pagination__next" href="#">></a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
 </html>

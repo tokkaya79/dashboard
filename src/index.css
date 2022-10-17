@@ -1,13 +1,481 @@
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f0f2f6;
+    margin: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 9.5rem;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.container {
+    display: flex;
+}
+
+.input-hidden {
+    width: 0.1rem;
+    height: 0.1rem;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+.side-menu {
+    width: 30.6rem;
+    height: 100vw;
+    background-color: #fff;
+    padding: 4rem 2.8rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding-left: 1rem;
+}
+
+.logo__text {
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 3.9rem;
+    margin-left: 1.2rem;
+}
+
+.logo__vr {
+    padding-top: 1.2rem;
+    color: #838383;
+}
+
+.side-menu__form {
+    max-width: 25rem;
+}
+
+.form__label {
+    display: block;
+    width: 25rem;
+    height: 4.6rem;
+    padding: 1rem 2.8rem 1rem 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form__input:checked+.form__checkbox,
+.form__input:checked+.form__label {
+    background-color: #5932EA;
+    color: #fff;
+}
+
+.form__checkbox {
+    padding: 1.3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.8rem;
+    color: #9197B3;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    position: relative;
+}
+
+.form__checkbox img {
+    margin-right: 1.6rem;
+}
+
+.form__checkbox span:last-child {
+    position: absolute;
+    right: 2rem;
+}
+
+.side-menu__avatar {
+    display: flex;
+    padding-top: 10rem;
+}
+
+.side-menu__avatar img {
+    width: 4.2rem;
+    height: 4.2rem;
+}
+
+.avatar__data {
+    margin-left: 1rem;
+    line-height: 0.5;
+    padding-top: 0.3rem;
+}
+
+.avatar__name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.avatar__position {
+    color: #757575;
+    font-size: 12px;
+}
+
+.product {
+    width: 70%;
+    height: 81.2rem;
+    padding-left: 7.1rem;
+}
+
+.product__top-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 3.6rem;
+    margin-bottom: 5.1rem;
+    margin-top: 4rem;
+}
+
+.product__tabl {
+    width: 100%;
+    padding: 4rem;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+}
+
+.tabl__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabl__top-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 3.3rem;
+    margin: 0;
+}
+
+.tabl__top-subtitle {
+    color: #16C098;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+}
+
+.tabl__search {
+    display: flex;
+    border: none;
+    font-size: 0;
+    width: 21.8rem;
+    height: 3.8rem;
+    position: relative;
+}
+
+.tabl__search-btn {
+    border: none;
+    background: #f0f2f6;
+    height: 3.8rem;
+    width: 3.8rem;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.tabl__search-input {
+    background: #f0f2f6;
+    border: none;
+    width: 17.8rem;
+    height: 3.65rem;
+    outline: none;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.tabl__form {
+    width: 100%;
+}
+
+.tabl__form th {
+    border-bottom: 1px solid #EEEEEE;
+    text-align: left;
+    color: #B5B7C0;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+}
+
+.tabl__form th:last-child {
+    padding-left: 1rem;
+}
+
+.tabl__form td {
+    border-bottom: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    color: #292D32;
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+
+.tabl__checkbox {
+    text-align: center;
+    width: 6rem;
+    height: 2rem;
+    background: rgba(22, 192, 152, 0.38);
+    border-radius: 4px;
+    border: 1px solid #00B087;
+    color: #00B087;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tabl__checkbox::after {
+    content: 'Active';
+}
+
+.tabl__input:checked+.tabl__label,
+.tabl__input:checked+.tabl__checkbox {
+    background-color: #FFC5C5;
+    color: #DF0404;
+    border: 1px solid #DF0404;
+}
+
+.tabl__input:checked+.tabl__checkbox::after {
+    content: 'Inactive';
+
+}
+
+.tabl__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.tabl__bottom-text {
+    color: #B5B7C0;
+}
+
+.pagination__list {
+    list-style-type: none;
+    display: flex;
+}
+
+.pagination__list a {
+    text-decoration: none;
+}
+
+.pagination__item {
+    width: 2.5rem;
+    height: 2.5rem;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    margin-left: 1rem;
+    text-align: center;
+    padding-top: 0.5rem;
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination__item--active {
+    background-color: #5932EA;
+}
+
+.pagination__item--span {
+    background-color: none;
+    margin-left: 1rem;
+    padding-top: 1rem;
+    color: black;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.pagination__prev,
+.pagination__page,
+.pagination__span,
+.pagination__next {
+    color: #404B52;
+}
+
+.pagination__page--active {
+    color: #fff;
+}
+
+
+@media (max-width: 1600px) {
+
+    .product {
+        padding-left: 3rem;
+    }
+
+    .product__tabl {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        margin-right: 3rem;
+    }
+
+    .side-menu {
+        width: 15rem;
+    }
+
+    .side-menu__form {
+        width: 15rem;
+    }
+
+    .logo__text {
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.9rem;
+        margin-left: 0.2rem;
+    }
+
+    .product__tabl {
+        width: 90%;
+    }
+}
+
+@media (max-width: 950px) {
+    .container {
+        display: block;
+    }
+
+    .side-menu {
+        width: 120%;
+        height: 10rem;
+        padding-top: 1rem;
+    }
+
+    .side-menu__form {
+        display: flex;
+
+    }
+
+    .logo {
+        margin-bottom: 2rem;
+    }
+
+    .form__label {
+        padding-right: 0.3rem;
+    }
+
+    .form__checkbox {
+        padding: 0.3rem;
+        margin-left: 0.5rem;
+    }
+
+    .form__checkbox svg {
+        margin-right: 0.3rem;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .side-menu__avatar {
+        margin-top: 2.5rem;
+        margin-left: 40rem;
+        padding-top: 0;
+
+    }
+
+    .product {
+        width: 100vh;
+    }
+}
+
+@media (max-width: 650px) {
+    .side-menu {
+        width: 120%;
+        height: 30rem;
+        padding-top: 1rem;
+    }
+
+    .side-menu__form {
+        display: block;
+    }
+
+    .form__label {
+        height: 2rem;
+    }
+
+    .form__checkbox {
+        width: 100vw;
+    }
+
+    .side-menu__avatar {
+        margin-top: 5.5rem;
+        margin-left: 30rem;
+    }
+
+    .product__tabl {
+        width: 100vh;
+    }
+
+}
+
+@media (max-width: 420px) {
+    .form__checkbox {
+        width: 70%;
+    }
+
+    .product {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .product__tabl {
+        font-size: 12px;
+        width: 100vh;
+    }
+
+    .product__top-title {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .tabl__top-title {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2rem;
+        margin: 0;
+    }
+
+    .tabl__top {
+        display: block;
+    }
+
+    .tabl__search-input {
+        height: 2.56rem;
+        width: 12rem;
+        right: 6rem;
+    }
+
+    .tabl__search-btn {
+        height: 2.7rem;
+    }
+
+    .tabl__form td {
+        font-size: 10px;
+    }
+
 }
